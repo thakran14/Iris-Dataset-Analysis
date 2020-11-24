@@ -1,0 +1,50 @@
+---
+title: "Iris EDA"
+output: html_document
+---
+
+```{r}
+datasets::iris
+```
+
+```{r}
+head(iris)
+```
+
+
+```{r}
+tail(iris)
+```
+
+
+```{r}
+str(iris)
+```
+
+
+```{r}
+summary(iris)
+```
+
+
+```{r}
+plot(iris)
+
+```
+
+
+```{r}
+sepal_len <- iris$Sepal.Length
+hist(sepal_len, main= "Histogram for Sepal Length", xlab = "Sepal Length", xlim = c(4,8), col = "red", freq = FALSE)
+```
+```{r}
+sepal_width <- iris$Sepal.Width
+hist(sepal_width, main = "Histogram for Sepal Width", xlab = "Sepal Width", col = "darkorchid", freq = FALSE)
+```
+
+```{r}
+library(ggplot2)
+qplot(sepal_width,sepal_len, data = iris, color = Species)
+
+```
+
