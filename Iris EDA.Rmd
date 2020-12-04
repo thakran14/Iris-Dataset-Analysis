@@ -31,7 +31,27 @@ summary(iris)
 plot(iris)
 
 ```
-##Sepal Length and Sepal WIdth analysis
+
+## Finding Correlation between features using correlation matrix
+
+```{r}
+cr <-cor(iris[1:4])
+cr
+```
+### Using corrplot to plot the correlation matrix  
+
+
+```{r}
+library(corrplot)
+corrplot(cr)
+
+
+```
+
+### Strong correlation is observed between sepal width & sepal length and Petal width and Petal Length  
+
+
+## Sepal Length and Sepal WIdth analysis  
 
 
 ```{r}
@@ -40,7 +60,7 @@ hist(sepal_len, main= "Histogram for Sepal Length", xlab = "Sepal Length", xlim 
 ```
 ```{r}
 sepal_width <- iris$Sepal.Width
-hist(sepal_width, main = "Histogram for Sepal Width", xlab = "Sepal Width", col = "darkorchid", freq = FALSE)
+hist(sepal_width, main = "Histogram for Sepal Width", xlab = "Sepal Width",xlim = c(2,4.5), col = "darkorchid", freq = FALSE)
 ```
 
 ```{r}
@@ -106,7 +126,8 @@ model2
 plot(petal_wid~petal_len, col = petal_len)
 abline(model2 , col = "blue" , lwd=3)
 ```
-### Predict Values
+
+### Predicting Values
 
 ```{r}
 #Prediction of Sepal width with Sepal length given as 15
@@ -123,6 +144,8 @@ p2
 
 ```
 
-### Predicted value is 10.03
+### Predicted value is 10.03  
+
+
 
 
